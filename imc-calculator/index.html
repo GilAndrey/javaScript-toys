@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo</title>
+    <link rel="stylesheet" href="assents/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Open+Sans:ital,wdth@0,75..100;1,75..100&display=swap" rel="stylesheet">
+    
+</head>
+
+<body>
+
+    
+    <section class="container">
+        <div class="content-wrapper">
+
+        <h1>Tabela IMC</h1>
+
+            <div class="table-wrapper">
+                <b>IMC</b>
+                <p>Menos do que 18.5 <br>
+                Entre 18.4 e 24.9 <br>
+                Entre 25.0 e 29.9 <br>
+                Entre 30.0 e 34.9 <br>
+                Entre 35.0 e 39.9 <br> 
+                Mais do que 40</p>   
+            
+            </div>
+
+            <div>
+                <b>Resultado</b> 
+
+                <p>Abaixo do peso <br>
+                Peso normal <br>
+                Sobrepeso <br>
+                Obesidade grau 1 <br>
+                Obesidade grau 2 <br>
+                Obesidade grau 3</p>
+            </div>
+        </div>
+
+
+        <form action="/" id="form" method="POST">
+            <label for="peso">Peso</label>
+            <input type="text" id="peso" name="peso">
+            <label for="altura">Altura</label>
+            <input type="text" id="altura" name="altura">
+            <button type="submit">Enviar</button>
+        </form>
+
+        <div id="resultado"></div>
+
+    </section>
+
+
+    <script src="assents/js/main.js"></script>
+</body>
+</html>
