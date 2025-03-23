@@ -7,7 +7,7 @@ function Calculadora() {
   };
 
   this.capturaEnter = () => {
-    document.addEventListener("keyup", (e) => {
+    document.addEventListener("keypress", (e) => {
       if (e.keyCode !== 13) return;
       this.realizaConta();
     });
@@ -23,7 +23,11 @@ function Calculadora() {
     });
   };
 
-  // eval();
+  /*
+   * eval(); -> Codigo que possui a função matématica de fazer os Calculos
+   * Não recomendavel utilizar esse código, pode ser bem maléfico para o código "Parte de fora"
+   * Recomendavel criar a própria função Matématica para ter o melhor desempenho da Calculadora.
+   */
 
   this.realizaConta = function () {
     try {
@@ -42,7 +46,10 @@ function Calculadora() {
 
   this.del = () => (this.display.value = this.display.value.slice(0, -1));
 
-  this.addNumDisplay = (el) => (this.display.value += el.innerText);
+  this.addNumDisplay = (el) => {
+    this.display.value += el.innerText;
+    this.display.focus();
+  };
 
   this.clear = () => (this.display.value = "");
 }
