@@ -46,6 +46,13 @@ function Calculadora() {
 
   this.del = () => (this.display.value = this.display.value.slice(0, -1));
 
+  /*
+   *  focus() -> remove o Foco do ultimo botão pressionado
+   *  exemplo, utilizando o Enter para realizar a conta, era adicionado outro número
+   *  antes da conta ser feita, então deixando incerto.
+   *  focus(), tirou o Foco do Enter, então quando clickado ele não aciona mais os números
+   */
+
   this.addNumDisplay = (el) => {
     this.display.value += el.innerText;
     this.display.focus();
