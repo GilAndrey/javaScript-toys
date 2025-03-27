@@ -55,16 +55,16 @@ const a3 = [...a1, "Gil", ...a2, ...[7, 8, 9]];
  *  filter(valor, indice, Array);
  */
 
-const numbers = [5, 50, 80, 1, 2, 3, 5, 8, 7, 11, 15, 22, 27];
+const numbersforSplit = [5, 50, 80, 1, 2, 3, 5, 8, 7, 11, 15, 22, 27];
 
 // Este código está retornando os números acima de 10 -> utilizando Arrow function
-const numerosFiltrados = numbers.filter((valor) => valor > 10);
+const numerosFiltrados = numbersforSplit.filter((valor) => valor > 10);
 
 // Retorne as pessoas que tem o nome com 5 letras ou mais
 // Retorne as pessoas com mais de 50 anos
 // Retorne as pessoas cujo nome termina com a
 
-const pessoas = [
+const pessoasFilter = [
   { nome: "Gil Andrey", idade: 21 },
   { nome: "Mari", idade: 23 },
   { nome: "Eduardo", idade: 55 },
@@ -74,14 +74,50 @@ const pessoas = [
 ];
 
 // Função que filtra pessoas que tem 5 ou mais letras
-const pessoasNomeGrande = pessoas.filter((obj) => obj.nome.length >= 5);
+const pessoasNomeGrande = pessoasFilter.filter((obj) => obj.nome.length >= 5);
 
 // Função que filtra as pessoas com ou mais de 50 anos
-const idadeAlta = pessoas.filter((obj) => obj.idade >= 50);
+const idadeAlta = pessoasFilter.filter((obj) => obj.idade >= 50);
 
 // Função que filtra pessoas com a ultima letra do nome "A"
-const nomeTerminaComA = pessoas.filter((obj) => {
+const nomeTerminaComA = pessoasFilter.filter((obj) => {
   return obj.nome.toLowerCase().endsWith("a");
 });
 
-console.log(nomeTerminaComA);
+/*
+ *  Map -> Utilizado normalmente quando se quer mudar o Array original. ex
+ *  Dobrar número de um Array ou transformar objetos
+ */
+const numbersForMap = [5, 50, 80, 1, 2, 3, 5, 8, 7, 11, 15, 22];
+
+// Função map para dobrar os numeros.
+const numerosEmDobro = numbersForMap.map((valor) => valor * 2);
+
+// Retorne apenas uma string com o nome da pessoa
+// Remova apenas a chave "nome" do objeto
+//  Adiciona uma chave id em cada objeto
+
+// o "obj" que se mexe nas function, é o obj original.
+const pessoas = [
+  { nome: "Gil Andrey", idade: 21 },
+  { nome: "Mari", idade: 23 },
+  { nome: "Eduardo", idade: 55 },
+  { nome: "Letícia", idade: 19 },
+  { nome: "Rosana", idade: 32 },
+  { nome: "Wallace", idade: 47 },
+];
+
+// Fuction que retona apenas a String nome:
+const stringPessoa = pessoas.map((obj) => obj.nome);
+
+// Fuction que remove a chave "Nome" e retorna apenas a idade
+const removeNome = pessoas.map((obj) => ({ idade: obj.idade }));
+
+// Function para adicionar Id no Array, utilizando map
+const comIds = pessoas.map((obj, indice) => {
+  const newObj = { ...obj };
+  newObj.id = indice * 1000;
+  return newObj;
+});
+
+console.log(pessoas);
