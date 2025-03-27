@@ -150,10 +150,37 @@ const pessoas = [
 // Function para ver a pessoa mais velha.
 // Explicaçãod de código, -> Caso o acumulador seja maior que o valor, ele retorna o "acumulador"
 // caso o valor seja maior, o acumulador vai pegar o valor do "valor";
-
 const pessoaMaisVelha = pessoas.reduce((acumulador, valor) => {
   if (acumulador.idade > valor.idade) return acumulador;
   return valor;
 });
 
-console.log(pessoaMaisVelha);
+/*
+ * Misturando os 3 tipos de array, .filter(), .map(), .reduce();
+ *
+ */
+
+const numbers = [5, 50, 80, 1, 2, 3, 5, 8, 7, 11, 15, 22, 27];
+
+// Retorne a soma do dobro de todos os pares
+// -> Filtrar pares
+// -> Dobra os valores
+// -> Reduzir (somar tudo)
+
+// Function tudo que se pede a cima.
+const numerosPares = numbers
+  .filter((valor) => valor % 2 === 0)
+  .map((valor) => valor * 2)
+  .reduce((acumulador, valor) => (acumulador += valor));
+
+// console.log(numerosPares);
+
+// Utilizando forEach -->  um método simples e poderoso para iterar sobre arrays e executar uma função em cada elemento.
+
+const fe1 = [10, 20, 30];
+
+// ForEach para fazer soma do array acima.
+let forEachTotal = 0;
+fe1.forEach((valor) => {
+  forEachTotal += valor;
+});
