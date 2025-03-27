@@ -98,7 +98,7 @@ const numerosEmDobro = numbersForMap.map((valor) => valor * 2);
 //  Adiciona uma chave id em cada objeto
 
 // o "obj" que se mexe nas function, é o obj original.
-const pessoas = [
+const pessoasMap = [
   { nome: "Gil Andrey", idade: 21 },
   { nome: "Mari", idade: 23 },
   { nome: "Eduardo", idade: 55 },
@@ -108,16 +108,52 @@ const pessoas = [
 ];
 
 // Fuction que retona apenas a String nome:
-const stringPessoa = pessoas.map((obj) => obj.nome);
+const stringPessoa = pessoasMap.map((obj) => obj.nome);
 
 // Fuction que remove a chave "Nome" e retorna apenas a idade
-const removeNome = pessoas.map((obj) => ({ idade: obj.idade }));
+const removeNome = pessoasMap.map((obj) => ({ idade: obj.idade }));
 
 // Function para adicionar Id no Array, utilizando map
-const comIds = pessoas.map((obj, indice) => {
+const comIds = pessoasMap.map((obj, indice) => {
   const newObj = { ...obj };
   newObj.id = indice * 1000;
   return newObj;
 });
 
-console.log(pessoas);
+/*
+ *  Reduce -> é utilizado normalmente para transformar um array em um unico valor
+ */
+
+const numbersForReduce = [5, 50, 80, 1, 2, 3, 5, 8, 7, 11, 15, 22, 27];
+
+// numbersForReduce.reduce((acumulador, valor, indice, array) <- O que está presente no reduce
+
+// Function utilizando acumulador, para somar os numeros pares.
+const total = numbersForReduce.reduce((acumulador, valor) => {
+  if (valor % 2 === 0) {
+    acumulador += valor;
+    // console.log(valor);
+  }
+  return acumulador;
+}, 0);
+
+// Retorne a pessoa mais velha
+const pessoas = [
+  { nome: "Gil Andrey", idade: 21 },
+  { nome: "Mari", idade: 23 },
+  { nome: "Eduardo", idade: 55 },
+  { nome: "Letícia", idade: 19 },
+  { nome: "Rosana", idade: 32 },
+  { nome: "Wallace", idade: 47 },
+];
+
+// Function para ver a pessoa mais velha.
+// Explicaçãod de código, -> Caso o acumulador seja maior que o valor, ele retorna o "acumulador"
+// caso o valor seja maior, o acumulador vai pegar o valor do "valor";
+
+const pessoaMaisVelha = pessoas.reduce((acumulador, valor) => {
+  if (acumulador.idade > valor.idade) return acumulador;
+  return valor;
+});
+
+console.log(pessoaMaisVelha);
