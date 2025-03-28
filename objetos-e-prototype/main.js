@@ -51,3 +51,51 @@ function Pessoa(nome, sobrenome) {
 const constructorP1 = new Pessoa("Gil", "Moraes");
 
 delete constructorP1.nome;
+
+/**
+ *  Object.defineProperty() - defineProperties()
+ *  um método poderoso que permite definir ou modificar propriedades em um objeto com controle total sobre seu comportamento.
+ *  Ele é essencial para:
+ *  Criar propriedades não enumeráveis (que não aparecem em loops como for...in)
+ *  Definir getters e setters personalizados
+ *  Controlar se a propriedade pode ser alterada ou deletada
+ *  */
+
+function Produto(nome, preco, estoque) {
+  this.nome = nome;
+  this.preco = preco;
+  // this.estoque = estoque;
+
+  Object.defineProperty(this, "estoque", {
+    enumerable: true, // <- Mostra a Chave
+    value: estoque, // <- É o valor da chave
+    writable: false, // <- Pode alterar o valor ou não
+    configurable: true, // <- Pode re-configurar o Object.defineProperty, e tambem apagar usando delete. (Se estiver true)
+  });
+
+  // Utilizando defineProperties
+
+  Object.defineProperties(this, {
+    nome: {
+      enumerable: true, // mostra a chave
+      value: nome, // valor
+      writable: true, // Pode alterar
+      configurable: true, // configuravel
+    },
+    preco: {
+      enumerable: true,
+      value: preco,
+      writable: true,
+      configurable: true,
+    },
+  });
+}
+
+const product = new Produto("Camisa", 20, 3);
+
+// -> Mostra um array com as chaves inumeraveis
+console.log(Object.keys(product));
+
+for (let chave in product) {
+  console.log(chave);
+}
