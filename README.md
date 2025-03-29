@@ -26,7 +26,7 @@ A organização pode variar, mas geralmente seguirá este formato:
 
 1. Clone o repositório:
    ```sh
-   git clone https://github.com/seu-usuario/javascript-hub.git
+   git clone https://github.com/gil_andrey/javascript-toys.git
    ```
 2. Navegue até a pasta desejada e explore os arquivos.
 3. Experimente, modifique e execute os códigos para testar seu aprendizado.
