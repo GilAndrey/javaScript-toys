@@ -91,11 +91,7 @@ function Produto(nome, preco, estoque) {
   });
 }
 
-const product = new Produto("Camisa", 20, 3);
+const p1 = new Produto("Camisa", 20, 3);
 
 // -> Mostra um array com as chaves inumeraveis
-console.log(Object.keys(product));
-
-for (let chave in product) {
-  console.log(chave);
-}
+// console.log(Object.keys(p1));
