@@ -1,7 +1,8 @@
 // Obeject.assing(des, any) ->  um método do JavaScript que copia as propriedades próprias enumeráveis de um ou mais objetos de origem para um objeto de destino. Ele retorna o objeto de destino modificado.
 // Object.getOwnPropertyDescriptor(o, 'prop') ... (spread)
 
-/** Já vimos
+/*
+ * Já vimos
  *  Object.keys (retorna chaves)
  *  Object.freeze  (congela o objeto)
  *  Object.defineProperties (define  varias propriedades)
