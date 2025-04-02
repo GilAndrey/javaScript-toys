@@ -28,20 +28,48 @@ function ValidaCPF(cpfEnviado) {
   });
 }
 
+// Função prototype para ver se o CPF é valido (ter certeza que ele não é null e tenha 11 números)
 ValidaCPF.prototype.valida = function () {
   if (typeof this.cpfLimpo === "undefined") return false;
   if (this.cpfLimpo.length !== 11) return false;
+  if (this.isSequencia()) return false;
 
   const cpfParcial = this.cpfLimpo.slice(0, -2);
   const digito1 = this.criaDigito(cpfParcial);
+  // Para pegar o digito 2
+  const digito2 = this.criaDigito(cpfParcial + digito1);
 
-  return true;
+  const novoCpf = cpfParcial + digito1 + digito2;
+  return novoCpf === this.cpfLimpo;
 };
 
 ValidaCPF.prototype.criaDigito = function (cpfParcial) {
   const cpfArray = Array.from(cpfParcial);
-  console.log(cpfArray);
+
+  // Função prototype, para pegar o primeiro digito do CPF
+  let regressivo = cpfArray.length + 1;
+  const total = cpfArray.reduce((ac, val) => {
+    ac += regressivo * Number(val);
+    regressivo--;
+    return ac;
+  }, 0);
+
+  // Essas linhas são para definir o digito 1, e para ver se ele é maior que 9
+  const digito = 11 - (total % 11);
+  return digito > 9 ? "0" : String(digito);
+};
+
+// Função para evitar uma sequencia no CPF ex: 111.111.111-11, 222.222.222-22
+ValidaCPF.prototype.isSequencia = function () {
+  // Const sequencia, pega o tamanho do cpf e compara para ver se ele repete o mesmo valor 11 vezes
+  const sequencia = this.cpfLimpo[0].repeat(this.cpfLimpo.length);
+  return sequencia === this.cpfLimpo;
 };
 
 const cpf = new ValidaCPF("705.484.450-52");
-console.log(cpf.valida());
+
+if (cpf.valida()) {
+  console.log("CPF Válido");
+} else {
+  console.log("CPF Inválido");
+}
