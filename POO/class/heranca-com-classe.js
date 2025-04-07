@@ -46,11 +46,46 @@ class Tablet extends DispositivoEletronico {
 }
 
 const s1 = new Smartphone("Samsung", "Preto", "Galaxy s23");
-console.log(s1);
+// console.log(s1);
 
 const t1 = new Tablet("iPad", true);
 
-t1.ligar();
-t1.falaOi();
+// t1.ligar();
+// t1.falaOi();
 
-console.log(t1);
+// console.log(t1);
+
+// Metodos de instacia e estaticos
+// Utilizando instacia
+class ControleRemoto {
+  constructor(tv) {
+    this.tv = tv;
+    this.volume = 0;
+  }
+
+  aumentarVolume() {
+    this.volume += 2;
+  }
+
+  diminiurVolume() {
+    this.volume -= 2;
+  }
+
+  // Metodo de estático
+  static soma(x, y) {
+    return x + y;
+  }
+}
+
+const controle1 = new ControleRemoto("lg");
+
+controle1.aumentarVolume();
+controle1.aumentarVolume();
+controle1.aumentarVolume();
+console.log(controle1);
+
+console.log(ControleRemoto.soma(2, 5));
+
+// A diferença do metado estatico para o metodo da instancia
+// Metodo estatico - pertence a propria classe. Então para utilizar precisa ser utilizando diretamente a classe
+// Pelo contrario a instancia já pode ser utilizada Open source
