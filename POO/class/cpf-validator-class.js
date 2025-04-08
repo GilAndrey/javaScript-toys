@@ -49,10 +49,10 @@ class ValidaCPF {
     return this.novoCPF === this.cpfLimpo;
   }
 }
-const cpf = new ValidaCPF("705.484.450-52");
+// const cpf = new ValidaCPF("705.484.450-52");
 
-if (cpf.valida()) {
-  console.log("CPF Válido");
-} else {
-  console.log("CPF Inválido");
-}
+// if (cpf.valida()) {
+//   console.log("CPF Válido");
+// } else {
+//   console.log("CPF Inválido");
+// }
