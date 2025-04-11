@@ -27,39 +27,66 @@ function esperaAI(msg, tempo) {
   // Resolve = quando o codigo executa com sucesso: "Resolve ele pra mim"
   // Reject = Quando o codigo da erro: "Rejeita ele pra mim"
   return new Promise((resolve, reject) => {
-    if (typeof msg !== "string") reject(false);
     setTimeout(() => {
-      resolve(msg);
+      if (typeof msg !== "string") {
+        reject("CAIU NO ERRO");
+        return;
+      }
+      resolve(msg.toUpperCase() + " - Passei na promise");
+      return;
     }, tempo);
   });
 }
 
 // .then() só sera executado quando o Resolve() funcionar
 // .then() possui algumas funcionalidades - Gemini, Gpt ou deepseek pode explicar melhor.
-esperaAI("Conexão com o BD", rand(1, 3))
-  .then((resposta) => {
-    console.log(resposta);
-    return esperaAI("Buscando dados da BASE", rand(1, 3));
-    f;
-  })
-  .then((resposta) => {
-    console.log(resposta);
-    return esperaAI("Frase 3", rand(1, 3));
-  })
-  .then((resposta) => {
-    console.log(resposta);
-  })
-  .then(() => {
-    console.log("Eu serei o ultimo a ser exibido");
-  })
-  // Esse é o reject, caso tenha erro ele volta o erro
-  // Vao rodando o then até encontrar o erro
-  .catch((error) => {
-    console.log("Error " + error);
-  });
+
+// esperaAI("Conexão com o BD", rand(1, 3))
+//   .then((resposta) => {
+//     console.log(resposta);
+//     return esperaAI("Buscando dados da BASE", rand(1, 3));
+//     f;
+//   })
+//   .then((resposta) => {
+//     console.log(resposta);
+//     return esperaAI("Frase 3", rand(1, 3));
+//   })
+//   .then((resposta) => {
+//     console.log(resposta);
+//   })
+//   .then(() => {
+//     console.log("Eu serei o ultimo a ser exibido");
+//   })
+//   // Esse é o reject, caso tenha erro ele volta o erro
+//   // Vao rodando o then até encontrar o erro
+//   .catch((error) => {
+//     console.log("Error " + error);
+//   });
 
 // O codigo normal é executado antes das promises.
 // Por isso se chama de codigo Assyncrono
-console.log("Isso aki será recebido antes de tudo");
+// console.log("Isso aki será recebido antes de tudo");
 
 // Bastante utilizado quando for mexer com BD. Banco de dados, base de dados
+
+/*  Métodos Uteis para utilizar Promises
+
+ *  Promise.all -> Passa um array com promises e ele resolve todas.
+ *  Promise.race -> Como se fosse uma corrida, sempre ira entregar o primeiro valor (até quando não é promise)
+ *  Promise.resolve -> Passa um valor já resolvido (meio inutil) porém as veze sé util, força valor comum a virar uma promise (quando tem resolve cai no .then())
+ *  Promise.reject -> Sempre que tem um reject, ele já cai no catch
+ */
+
+function baixarPagina() {
+  const emCache = true;
+
+  if (emCache) {
+    return Promise.reject("Página em cache");
+  } else {
+    return esperaAI("Baixando a pag", 2000);
+  }
+}
+
+baixarPagina()
+  .then((dadosPagina) => console.log(dadosPagina))
+  .catch((e) => console.log("Erro", e));
