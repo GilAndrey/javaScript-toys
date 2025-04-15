@@ -1,0 +1,152 @@
+[
+    {
+        "nome": "Gil Andrey",
+        "email": "gilandrey@email.com",
+        "salario": 31820,
+        "estado": "PE",
+        "empresa": "start-up",
+        "idade": 21,
+        "sexo": "masculinho",
+        "cpf": "392.476.850-49"
+    },
+    {
+        "nome": "Luna",
+        "email": "luna@email.com",
+        "salario": 5000,
+        "estado": "PE",
+        "empresa": "Florescent",
+        "idade": 21,
+        "sexo": "feminino",
+        "cpf": "974.185.240-92"
+    },
+    {
+        "nome": "Maisa",
+        "email": "maisa@email.com",
+        "salario": 12000,
+        "estado": "PE",
+        "empresa": "WorkSpaceLT",
+        "idade": 21,
+        "sexo": "feminino",
+        "cpf": "236.497.980-04"
+    },
+    {
+        "nome": "Ana Beatriz Silva",
+        "email": "ana.silva@example.com",
+        "salario": 4500.75,
+        "estado": "SP",
+        "empresa": "TechNova",
+        "idade": 28,
+        "sexo": "F",
+        "cpf": "392.476.850-49"
+      },
+      {
+        "nome": "Carlos Henrique Oliveira",
+        "email": "carlos.oliveira@example.com",
+        "salario": 5200.00,
+        "estado": "RJ",
+        "empresa": "InovaTI",
+        "idade": 34,
+        "sexo": "M",
+        "cpf": "518.203.670-00"
+      },
+      {
+        "nome": "Mariana Costa",
+        "email": "mariana.costa@example.com",
+        "salario": 6100.00,
+        "estado": "MG",
+        "empresa": "Grupo Vortex",
+        "idade": 30,
+        "sexo": "F",
+        "cpf": "974.185.240-92"
+      },
+      {
+        "nome": "Roberto Lima",
+        "email": "roberto.lima@example.com",
+        "salario": 4700.40,
+        "estado": "BA",
+        "empresa": "NetLogix",
+        "idade": 41,
+        "sexo": "M",
+        "cpf": "236.497.980-04"
+      },
+      {
+        "nome": "Juliana Mendes",
+        "email": "juliana.mendes@example.com",
+        "salario": 3800.00,
+        "estado": "PR",
+        "empresa": "DataSmart",
+        "idade": 26,
+        "sexo": "F",
+        "cpf": "312.498.760-60"
+      },
+      {
+        "nome": "Fernando Souza",
+        "email": "fernando.souza@example.com",
+        "salario": 6900.90,
+        "estado": "RS",
+        "empresa": "SkyDev",
+        "idade": 39,
+        "sexo": "M",
+        "cpf": "809.176.350-82"
+      },
+      {
+        "nome": "Patrícia Gomes",
+        "email": "patricia.gomes@example.com",
+        "salario": 5450.00,
+        "estado": "CE",
+        "empresa": "CloudPrime",
+        "idade": 33,
+        "sexo": "F",
+        "cpf": "149.289.310-06"
+      },
+      {
+        "nome": "Marcelo Ferreira",
+        "email": "marcelo.ferreira@example.com",
+        "salario": 4200.00,
+        "estado": "PE",
+        "empresa": "SoftVision",
+        "idade": 31,
+        "sexo": "M",
+        "cpf": "257.913.420-75"
+      },
+      {
+        "nome": "Camila Rocha",
+        "email": "camila.rocha@example.com",
+        "salario": 4800.30,
+        "estado": "SC",
+        "empresa": "BrightCode",
+        "idade": 27,
+        "sexo": "F",
+        "cpf": "630.284.190-18"
+      },
+      {
+        "nome": "Eduardo Ribeiro",
+        "email": "eduardo.ribeiro@example.com",
+        "salario": 5900.80,
+        "estado": "GO",
+        "empresa": "NeoWorks",
+        "idade": 36,
+        "sexo": "M",
+        "cpf": "918.470.260-31"
+      },
+      {
+        "nome": "Larissa Martins",
+        "email": "larissa.martins@example.com",
+        "salario": 3750.25,
+        "estado": "MT",
+        "empresa": "InfoTech",
+        "idade": 25,
+        "sexo": "F",
+        "cpf": "803.195.740-92"
+      },
+      {
+        "nome": "Thiago Barbosa",
+        "email": "thiago.barbosa@example.com",
+        "salario": 6100.00,
+        "estado": "ES",
+        "empresa": "NextData",
+        "idade": 38,
+        "sexo": "M",
+        "cpf": "347.260.880-57"
+      }
+]
