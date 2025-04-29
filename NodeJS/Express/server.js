@@ -1,3 +1,5 @@
+// Para aplicação do Nodemon, é necessario o comando "npm install nodemon --save-dev"
+
 const express = require("express");
 const app = express();
 
@@ -11,7 +13,7 @@ const app = express();
 app.get("/", (req, res) => {
   res.send(`
         <form action="/" method="POST">
-        Nome: <input type="text" name="name">
+        Nome do cliente: <input type="text" name="name">
         <button>Enviar</button>
         </form>
     `);
