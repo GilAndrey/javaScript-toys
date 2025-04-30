@@ -7,6 +7,9 @@ const path = require("path");
 
 app.use(express.urlencoded({ extended: true }));
 
+// Pasta que contem o conteudo estatico "express.static"
+app.use(express.static(path.resolve(__dirname, "public")));
+
 app.set("views", path.resolve(__dirname, "src", "views"));
 app.set("view engine", "ejs");
 
