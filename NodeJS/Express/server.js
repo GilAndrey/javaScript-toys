@@ -3,15 +3,13 @@
 const express = require("express");
 const app = express();
 const routes = require("./routes");
+const path = require("path");
 
-// Caso nao faça o app.use, ele não irar tratar = Aparecer como undefined
-// app.use -> Diz ao Express para usar um middleware — um pedaço de código que roda antes dos seus controladores (routes, por exemplo).
-app.use(
-  // Esse middleware processa os dados do body da requisição quando estão no formato URL-encoded (padrão de formulários HTML).
-  express.urlencoded({
-    extended: true,
-  })
-);
+app.use(express.urlencoded({ extended: true }));
+
+app.set("views", path.resolve(__dirname, "src", "views"));
+app.set("view engine", "ejs");
+
 app.use(routes);
 
 app.listen(3000, () => {
